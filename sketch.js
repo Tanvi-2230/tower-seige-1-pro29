@@ -23,7 +23,12 @@ function setup() {
   engine = Engine.create();
   world =  engine.world;
 
-  hexa = Bodies.circle(50, 200, 20);
+  var options = {
+    'restitution' : 0.1,
+    'friction' : 0,
+    'density' : 0.2
+  }
+  hexa = Bodies.circle(50, 200, 20, options);
   World.add(world, hexa)
   rope = new Launcher(hexa, {x:150, y:200});
 
